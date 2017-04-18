@@ -1,0 +1,8 @@
+E:\8semestr\ntp\server\ChatServer\bin\Release\ChatServer.exe
+E:\8semestr\ntp\server\ChatServer\bin\Release\ChatServer.pdb
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.csprojResolveAssemblyReference.cache
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.Form1.resources
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.Properties.Resources.resources
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.csproj.GenerateResource.Cache
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.exe
+E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.pdb

@@ -1,0 +1,7 @@
+E:\8semestr\ntp\client\ChatClient\bin\Debug\ChatClient.exe
+E:\8semestr\ntp\client\ChatClient\bin\Debug\ChatClient.pdb
+E:\8semestr\ntp\client\ChatClient\obj\Debug\ChatClient.Form1.resources
+E:\8semestr\ntp\client\ChatClient\obj\Debug\ChatClient.Properties.Resources.resources
+E:\8semestr\ntp\client\ChatClient\obj\Debug\ChatClient.csproj.GenerateResource.Cache
+E:\8semestr\ntp\client\ChatClient\obj\Debug\ChatClient.exe
+E:\8semestr\ntp\client\ChatClient\obj\Debug\ChatClient.pdb
