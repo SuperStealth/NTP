@@ -36,17 +36,19 @@ namespace ChatClient
             this.txtLog = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(216, 34);
+            this.btnConnect.Location = new System.Drawing.Point(216, 60);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 0;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            this.btnConnect.Click += new System.EventHandler(this.BtnConnect_Click);
             // 
             // txtIp
             // 
@@ -54,7 +56,7 @@ namespace ChatClient
             this.txtIp.Name = "txtIp";
             this.txtIp.Size = new System.Drawing.Size(128, 20);
             this.txtIp.TabIndex = 1;
-            this.txtIp.Text = "192.168.1.101";
+            this.txtIp.Text = "127.0.0.1";
             // 
             // lblServer
             // 
@@ -88,12 +90,12 @@ namespace ChatClient
             // txtLog
             // 
             this.txtLog.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLog.Location = new System.Drawing.Point(16, 63);
+            this.txtLog.Location = new System.Drawing.Point(16, 89);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLog.Size = new System.Drawing.Size(275, 282);
+            this.txtLog.Size = new System.Drawing.Size(275, 256);
             this.txtLog.TabIndex = 5;
             // 
             // lblName
@@ -111,13 +113,31 @@ namespace ChatClient
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(128, 20);
             this.txtUser.TabIndex = 7;
-            this.txtUser.Text = "Tobias Funke";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(82, 63);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(128, 20);
+            this.txtPassword.TabIndex = 9;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(13, 66);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 8;
+            this.lblPassword.Text = "Password:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 389);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtLog);
@@ -145,6 +165,8 @@ namespace ChatClient
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblPassword;
     }
 }
 

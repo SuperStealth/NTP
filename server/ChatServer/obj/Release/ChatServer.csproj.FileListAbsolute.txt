@@ -6,3 +6,14 @@ E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.Properties.Resources.re
 E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.csproj.GenerateResource.Cache
 E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.exe
 E:\8semestr\ntp\server\ChatServer\obj\Release\ChatServer.pdb
+E:\8semestr\ntp\NTP\server\ChatServer\bin\Release\Database.mdf
+E:\8semestr\ntp\NTP\server\ChatServer\bin\Release\Database_log.ldf
+E:\8semestr\ntp\NTP\server\ChatServer\bin\Release\ChatServer.exe.config
+E:\8semestr\ntp\NTP\server\ChatServer\bin\Release\ChatServer.exe
+E:\8semestr\ntp\NTP\server\ChatServer\bin\Release\ChatServer.pdb
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.csprojResolveAssemblyReference.cache
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.Form1.resources
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.Properties.Resources.resources
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.csproj.GenerateResource.Cache
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.exe
+E:\8semestr\ntp\NTP\server\ChatServer\obj\Release\ChatServer.pdb

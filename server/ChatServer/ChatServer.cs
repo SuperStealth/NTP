@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.IO;
 using System.Threading;
 using System.Collections;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace ChatServer
 {
@@ -45,7 +47,7 @@ namespace ChatServer
         // Will store the IP address passed to it
         private IPAddress ipAddress;
         private TcpClient tcpClient;
-        // The event and its argument will notify the form when a user has connected, disconnected, send message, etc.
+       // The event and its argument will notify the form when a user has connected, disconnected, send message, etc.
         public static event StatusChangedEventHandler StatusChanged;
         private static StatusChangedEventArgs e;
 
@@ -68,8 +70,8 @@ namespace ChatServer
         public static void AddUser(TcpClient tcpUser, string strUsername)
         {
             // First add the username and associated connection to both hash tables
-            ChatServer.htUsers.Add(strUsername, tcpUser);
-            ChatServer.htConnections.Add(tcpUser, strUsername);
+            htUsers.Add(strUsername, tcpUser);
+            htConnections.Add(tcpUser, strUsername);
 
             // Tell of the new connection to all other users and to the server form
             SendAdminMessage(htConnections[tcpUser] + " has joined us");
@@ -217,7 +219,11 @@ namespace ChatServer
         private StreamReader srReceiver;
         private StreamWriter swSender;
         private string currUser;
+        private string currPassword;
         private string strResponse;
+        private COURSED.Sql _sqlWork = new COURSED.Sql();
+        public static string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\8semestr\ntp\NTP\server\ChatServer\Database.mdf;Integrated Security=True";
+
 
         // The constructor of the class takes in a TCP connection
         public Connection(TcpClient tcpCon)
@@ -245,6 +251,7 @@ namespace ChatServer
 
             // Read the account information from the client
             currUser = srReceiver.ReadLine();
+            currPassword = srReceiver.ReadLine();
 
             // We got a response from the client
             if (currUser != "")
@@ -268,12 +275,37 @@ namespace ChatServer
                 }
                 else
                 {
-                    // 1 means connected successfully
-                    swSender.WriteLine("1");
-                    swSender.Flush();
+                    SqlConnection connection = new SqlConnection(_connectionString);
+                    connection.Open();
+                    SqlDataReader reader;
+                    SqlCommand cmd = new SqlCommand()
+                    {
+                        Connection = connection,
+                        CommandText = "SELECT login, password FROM [dbo].[Users] WHERE (Users.login = N'" + currUser + "') AND (Users.password = N'" + currPassword + "')"
+                    };
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    Debug.Print(String.Format("1{0}1", reader["login"]));
+                    Debug.Print(String.Format("1{0}1", currUser));
+                    if (reader["login"].ToString().TrimEnd() == currUser)
+                    {
+                        swSender.WriteLine("1");
+                        swSender.Flush();
 
-                    // Add the user to the hash tables and start listening for messages from him
-                    ChatServer.AddUser(tcpClient, currUser);
+                        // Add the user to the hash tables and start listening for messages from him
+                        ChatServer.AddUser(tcpClient, currUser);
+                    }
+                    else
+                    {
+                        swSender.WriteLine("0|Wrong username or password.");
+                        swSender.Flush();
+                        CloseConnection();
+                    }
+                    connection.Close();
+                    cmd.Dispose();
+
+                    // 1 means connected successfully
+                    
                 }
             }
             else

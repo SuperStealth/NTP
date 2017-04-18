@@ -47,7 +47,7 @@ namespace ChatClient
             }
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+        private void BtnConnect_Click(object sender, EventArgs e)
         {
             // If we are not currently connected but awaiting to connect
             if (Connected == false)
@@ -84,6 +84,7 @@ namespace ChatClient
             // Send the desired username to the server
             swSender = new StreamWriter(tcpServer.GetStream());
             swSender.WriteLine(txtUser.Text);
+            swSender.WriteLine(txtPassword.Text);//pass
             swSender.Flush();
 
             // Start the thread for receiving messages and further communication
@@ -98,6 +99,7 @@ namespace ChatClient
             // If the first character of the response is 1, connection was successful
             string ConResponse = srReceiver.ReadLine();
             // If the first character is a 1, connection was successful
+            if (ConResponse != "")
             if (ConResponse[0] == '1')
             {
                 // Update the form to tell it we are now connected

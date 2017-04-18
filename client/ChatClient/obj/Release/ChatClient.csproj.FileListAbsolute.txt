@@ -5,3 +5,10 @@ E:\8semestr\ntp\client\ChatClient\obj\Release\ChatClient.Properties.Resources.re
 E:\8semestr\ntp\client\ChatClient\obj\Release\ChatClient.csproj.GenerateResource.Cache
 E:\8semestr\ntp\client\ChatClient\obj\Release\ChatClient.exe
 E:\8semestr\ntp\client\ChatClient\obj\Release\ChatClient.pdb
+E:\8semestr\ntp\NTP\client\ChatClient\bin\Release\ChatClient.exe
+E:\8semestr\ntp\NTP\client\ChatClient\bin\Release\ChatClient.pdb
+E:\8semestr\ntp\NTP\client\ChatClient\obj\Release\ChatClient.Form1.resources
+E:\8semestr\ntp\NTP\client\ChatClient\obj\Release\ChatClient.Properties.Resources.resources
+E:\8semestr\ntp\NTP\client\ChatClient\obj\Release\ChatClient.csproj.GenerateResource.Cache
+E:\8semestr\ntp\NTP\client\ChatClient\obj\Release\ChatClient.exe
+E:\8semestr\ntp\NTP\client\ChatClient\obj\Release\ChatClient.pdb
